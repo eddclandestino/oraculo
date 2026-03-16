@@ -1,0 +1,94 @@
+# ORÁCULO — Cloud Build CI/CD Pipeline
+# Builds Docker image, pushes to Artifact Registry, deploys to Cloud Run.
+#
+# Trigger options:
+#   Manual:  gcloud builds submit --config cloudbuild.yaml
+#   Auto:    Connect repo in Cloud Build → Triggers → Push to main
+#
+# Required secrets in Secret Manager:
+#   - oraculo-gemini-key: Gemini API key
+#   - oraculo-av-key: Alpha Vantage API key
+
+steps:
+  # Step 1: Build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build'
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest'
+      - '--cache-from'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest'
+      - '.'
+
+  # Step 2: Push image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push'
+    args:
+      - 'push'
+      - '--all-tags'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}'
+
+  # Step 3: Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '${_SERVICE}'
+      - '--image'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+      # ── Resource limits ──
+      - '--memory'
+      - '1Gi'
+      - '--cpu'
+      - '1'
+      # ── WebSocket support ──
+      # Timeout = max duration of a single request (WebSocket session).
+      # 3600s = 1 hour. Gemini Live API has 10-min session limit anyway.
+      - '--timeout'
+      - '3600'
+      # Session affinity = best-effort sticky routing for WebSocket reconnects
+      - '--session-affinity'
+      # ── Scaling ──
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '3'
+      - '--concurrency'
+      - '10'
+      # ── Environment variables ──
+      - '--set-env-vars'
+      - 'ENVIRONMENT=production,LOG_LEVEL=INFO,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=${_REGION}'
+      # ── Secrets from Secret Manager ──
+      - '--set-secrets'
+      - 'GOOGLE_API_KEY=oraculo-gemini-key:latest,ALPHA_VANTAGE_API_KEY=oraculo-av-key:latest'
+
+# Substitution variables (can be overridden at build time)
+substitutions:
+  _REGION: 'us-central1'
+  _REPO: 'oraculo'
+  _SERVICE: 'oraculo'
+
+# Store built images in Artifact Registry
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:$COMMIT_SHA'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest'
+
+# Build options
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'
+
+# Timeout for the entire build pipeline (build + push + deploy)
+timeout: '900s'

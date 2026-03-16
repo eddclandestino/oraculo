@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <style>
+    text { dominant-baseline: auto; }
+  </style>
+  <rect width="1200" height="700" fill="#0c1018"/>
+<defs>
+<marker id="arrow-3b82f6" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+<marker id="arrow-d4a847" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d4a847"/>
+    </marker>
+<marker id="arrow-6b7a8d" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7a8d"/>
+    </marker>
+<filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+</defs>
+<text x="600.0" y="35" fill="#d4a847" font-size="20" font-weight="bold" text-anchor="middle" font-family="'JetBrains Mono', monospace">ORÁCULO — System Architecture</text>
+<text x="600.0" y="55" fill="#6b7a8d" font-size="11" font-weight="normal" text-anchor="middle" font-family="'DM Sans', sans-serif">Gemini Live Agent Challenge  |  Clandestino Ventures</text>
+<rect x="30" y="80" width="200" height="520" rx="8" fill="#1a2235" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="105" fill="#e8ecf1" font-size="14" font-weight="bold" text-anchor="middle" font-family="'DM Sans', sans-serif">BROWSER</text>
+<text x="130.0" y="122" fill="#6b7a8d" font-size="10" font-weight="normal" text-anchor="middle" font-family="'DM Sans', sans-serif">Client</text>
+<rect x="45" y="155" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="177" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Audio Capture</text>
+<text x="103.0" y="193" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">16kHz PCM</text>
+<rect x="45" y="225" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="247" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">AudioWorklet</text>
+<text x="73.0" y="263" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Downsample + Encode</text>
+<rect x="45" y="295" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="317" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Video / Screen</text>
+<text x="100.0" y="333" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">1 FPS JPEG</text>
+<rect x="45" y="365" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="387" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Audio Playback</text>
+<text x="103.0" y="403" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">24kHz PCM</text>
+<rect x="45" y="435" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="457" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Waveform Viz</text>
+<text x="67.0" y="473" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Canvas + AnalyserNode</text>
+<rect x="45" y="505" width="170" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="130.0" y="527" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">State Machine</text>
+<text x="97.0" y="543" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">7 UI States</text>
+<rect x="310" y="80" width="860" height="520" rx="10" fill="#0a0e15" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="740.0" y="105" fill="#e8ecf1" font-size="14" font-weight="bold" text-anchor="middle" font-family="'DM Sans', sans-serif">GOOGLE CLOUD</text>
+<rect x="350" y="130" width="240" height="320" rx="8" fill="#1a2235" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="470.0" y="152" fill="#e8ecf1" font-size="13" font-weight="bold" text-anchor="middle" font-family="'DM Sans', sans-serif">Cloud Run</text>
+<text x="370" y="170" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Single container instance</text>
+<rect x="365" y="185" width="210" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="470.0" y="207" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">FastAPI Server</text>
+<text x="375" y="223" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">WebSocket Endpoint</text>
+<rect x="365" y="250" width="210" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="470.0" y="272" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">GenAI SDK</text>
+<text x="375" y="288" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Live API Client</text>
+<rect x="365" y="315" width="210" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="470.0" y="337" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Tools Engine</text>
+<text x="375" y="353" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Function Calling</text>
+<rect x="365" y="380" width="210" height="50" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="470.0" y="402" fill="#e8ecf1" font-size="11" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Session Logger</text>
+<text x="375" y="418" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Firestore Writer</text>
+<rect x="650" y="130" width="240" height="180" rx="8" fill="#1a2235" stroke="#d4a847" stroke-width="1.5" opacity="1"/>
+<text x="770.0" y="152" fill="#d4a847" font-size="13" font-weight="bold" text-anchor="middle" font-family="'DM Sans', sans-serif">Gemini Live API</text>
+<text x="665" y="175" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">2.5 Flash (Native Audio)</text>
+<text x="670" y="198" fill="#e8ecf1" font-size="10" font-family="'JetBrains Mono', monospace">• Audio Processing</text>
+<text x="670" y="220" fill="#e8ecf1" font-size="10" font-family="'JetBrains Mono', monospace">• Vision Analysis (1 FPS)</text>
+<text x="670" y="242" fill="#e8ecf1" font-size="10" font-family="'JetBrains Mono', monospace">• Voice Generation (24kHz)</text>
+<text x="670" y="264" fill="#e8ecf1" font-size="10" font-family="'JetBrains Mono', monospace">• Function Calling (manual)</text>
+<rect x="650" y="340" width="240" height="140" rx="8" fill="#1a2235" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="770.0" y="362" fill="#e8ecf1" font-size="13" font-weight="bold" text-anchor="middle" font-family="'DM Sans', sans-serif">Function Tools</text>
+<text x="670" y="388" fill="#22c55e" font-size="10" font-family="'JetBrains Mono', monospace">• get_stock_quote</text>
+<text x="670" y="410" fill="#22c55e" font-size="10" font-family="'JetBrains Mono', monospace">• get_market_news</text>
+<text x="670" y="432" fill="#22c55e" font-size="10" font-family="'JetBrains Mono', monospace">• get_technical_indicators</text>
+<text x="670" y="454" fill="#22c55e" font-size="10" font-family="'JetBrains Mono', monospace">• get_options_snapshot</text>
+<rect x="350" y="490" width="180" height="70" rx="8" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="440.0" y="518" fill="#e8ecf1" font-size="12" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">Cloud Firestore</text>
+<text x="370" y="538" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Session Metadata</text>
+<rect x="950" y="340" width="190" height="140" rx="8" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="1045.0" y="362" fill="#e8ecf1" font-size="12" font-weight="600" text-anchor="middle" font-family="'DM Sans', sans-serif">External APIs</text>
+<text x="965" y="390" fill="#6b7a8d" font-size="10" font-family="'JetBrains Mono', monospace">• Alpha Vantage</text>
+<text x="965" y="412" fill="#6b7a8d" font-size="10" font-family="'JetBrains Mono', monospace">• Yahoo Finance (yfinance)</text>
+<line x1="230" y1="240" x2="350" y2="205" stroke="#d4a847" stroke-width="2" marker-end="url(#arrow-d4a847)"  />
+<line x1="350" y1="225" x2="230" y2="400" stroke="#d4a847" stroke-width="2" marker-end="url(#arrow-d4a847)"  />
+<text x="255" y="225" fill="#d4a847" font-size="10" font-weight="bold" text-anchor="middle" font-family="'JetBrains Mono', monospace">WSS</text>
+<text x="240" y="240" fill="#d4a847" font-size="8" font-family="'JetBrains Mono', monospace">JSON + base64</text>
+<text x="240" y="390" fill="#d4a847" font-size="8" font-family="'JetBrains Mono', monospace">PCM Audio</text>
+<line x1="590" y1="220" x2="650" y2="200" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-3b82f6)"  />
+<line x1="650" y1="230" x2="590" y2="250" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-3b82f6)"  />
+<text x="605" y="208" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle" font-family="'JetBrains Mono', monospace">GenAI SDK</text>
+<text x="605" y="258" fill="#3b82f6" font-size="9" font-weight="normal" text-anchor="middle" font-family="'JetBrains Mono', monospace">Bidirectional</text>
+<line x1="590" y1="340" x2="650" y2="390" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-3b82f6)"  />
+<text x="605" y="335" fill="#6b7a8d" font-size="9" font-weight="normal" text-anchor="middle" font-family="'DM Sans', sans-serif">Execute</text>
+<line x1="890" y1="410" x2="950" y2="410" stroke="#6b7a8d" stroke-width="2" marker-end="url(#arrow-6b7a8d)"   stroke-dasharray="6,4"/>
+<text x="920" y="400" fill="#6b7a8d" font-size="9" font-weight="normal" text-anchor="middle" font-family="'DM Sans', sans-serif">HTTP</text>
+<line x1="450.0" y1="450" x2="440.0" y2="490" stroke="#6b7a8d" stroke-width="2" marker-end="url(#arrow-6b7a8d)"   stroke-dasharray="6,4"/>
+<text x="500.0" y="480" fill="#6b7a8d" font-size="9" font-weight="normal" text-anchor="middle" font-family="'DM Sans', sans-serif">Async Writes</text>
+<path d="M 770.0 310 Q 770.0 350 770.0 340" fill="none" stroke="#d4a847" stroke-width="2" marker-end="url(#arrow-d4a847)"   stroke-dasharray="6,4"/>
+<text x="780.0" y="330" fill="#d4a847" font-size="9" font-family="'JetBrains Mono', monospace">Tool Calls</text>
+<rect x="950" y="520" width="190" height="75" rx="5" fill="#141a26" stroke="#1e2a3a" stroke-width="1.5" opacity="1"/>
+<text x="960" y="538" fill="#6b7a8d" font-size="10" font-weight="bold" text-anchor="start" font-family="'DM Sans', sans-serif">Legend</text>
+<line x1="960" y1="552" x2="990" y2="552" stroke="#d4a847" stroke-width="2"/>
+<text x="998" y="556" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">Audio/Video Stream</text>
+<line x1="960" y1="568" x2="990" y2="568" stroke="#3b82f6" stroke-width="2"/>
+<text x="998" y="572" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">SDK / Internal</text>
+<line x1="960" y1="584" x2="990" y2="584" stroke="#6b7a8d" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="998" y="588" fill="#6b7a8d" font-size="9" font-family="'JetBrains Mono', monospace">External / Async</text>
+</svg>

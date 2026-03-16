@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORÁCULO — Market Intelligence Agent</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9678;</text></svg>">
+  <!-- Fonts: JetBrains Mono for data, DM Sans for UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-brand">
+      <span class="brand-icon">&#9678;</span>
+      <h1 class="brand-name">ORÁCULO</h1>
+      <span class="brand-tag">Market Intelligence Agent</span>
+    </div>
+    <div class="header-controls">
+      <button id="btn-start" class="btn btn-gold">&#9654; Start Session</button>
+      <button id="btn-stop" class="btn btn-danger hidden">&#9724; End Session</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+    <!-- LEFT: Video Panel -->
+    <section id="video-panel">
+      <video id="video-preview" autoplay playsinline muted class="hidden"></video>
+      <div id="video-placeholder">
+        <div class="placeholder-content">
+          <span class="placeholder-icon">&#9678;</span>
+          <p class="placeholder-title">ORÁCULO</p>
+          <p class="placeholder-subtitle">Share your screen or enable camera for visual analysis</p>
+        </div>
+      </div>
+      <canvas id="waveform-canvas"></canvas>
+    </section>
+
+    <!-- RIGHT: Controls + Activity -->
+    <section id="control-panel">
+      <!-- Media Controls -->
+      <div id="media-controls" class="hidden">
+        <button id="btn-mic" class="btn btn-control">&#127908; Mic Off</button>
+        <button id="btn-camera" class="btn btn-control">&#128247; Camera</button>
+        <button id="btn-screen" class="btn btn-control">&#128421; Screen</button>
+      </div>
+
+      <!-- Tool Call Indicator -->
+      <div id="tool-indicator" class="hidden">
+        <div class="tool-spinner"></div>
+        <span id="tool-name">Processing...</span>
+      </div>
+
+      <!-- Text Input Fallback -->
+      <div id="text-input-container">
+        <input type="text" id="text-input" placeholder="Type a message (or just speak)..." autocomplete="off">
+        <button id="btn-send" class="btn btn-send">Send</button>
+      </div>
+
+      <!-- Activity Log -->
+      <div id="activity-log-container">
+        <div class="log-header">Activity</div>
+        <div id="activity-log"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- STATUS BAR -->
+  <footer id="status-bar">
+    <div class="status-connection">
+      <span id="status-dot" class="status-dot"></span>
+      <span id="status-text">Ready to connect</span>
+    </div>
+    <div class="status-meta">
+      <span>ORÁCULO v1.0</span>
+      <span class="status-sep">&#183;</span>
+      <span>Gemini Live API</span>
+    </div>
+  </footer>
+
+  <!-- App Script (ES Module) -->
+  <script type="module" src="/static/main.js"></script>
+</body>
+</html>

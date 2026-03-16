@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  oraculo:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/app/frontend
